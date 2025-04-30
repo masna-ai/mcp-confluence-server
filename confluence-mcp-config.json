@@ -1,0 +1,36 @@
+{
+  "name": "confluence-server",
+  "displayName": "Confluence Data Center",
+  "description": "MCP server for interacting with Confluence Data Center via REST API",
+  "version": "1.0.0",
+  "command": "uv",
+  "args": ["run", "--with", "mcp", "mcp", "run", "server.py"],
+  "env": {
+    "CONFLUENCE_API_BASE": "http://localhost:8090/rest/api",
+    "CONFLUENCE_USERNAME": "admin",
+    "CONFLUENCE_PASSWORD": "@Qi85yhn",
+    "PYTHONUNBUFFERED": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "workingDirectory": "${configDir}",
+  "transportType": "stdio",
+  "icon": "https://wac-cdn.atlassian.com/assets/img/favicons/confluence/favicon-32x32.png",
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "resources": {
+      "subscribe": true,
+      "listChanged": true
+    },
+    "prompts": {
+      "listChanged": true
+    }
+  },
+  "metadata": {
+    "author": "Your Name",
+    "homepage": "https://github.com/yourusername/mcp-confluence-server",
+    "category": "Knowledge Management",
+    "tags": ["confluence", "documentation", "knowledge-base"]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "v": 6,
+  "name": "Confluence REST API",
+  "folders": [],
+  "requests": [
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content/163934",
+      "name": "Get page by page id",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "method": "GET",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content/163934?expand=body.storage",
+      "name": "Get page content body",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "method": "GET",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content/scan?spaceKey=COD&limit=2&expand=history",
+      "name": "Find pages by space key",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "method": "GET",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content?title=demo page&spaceKey=COD&expand=history",
+      "name": "Find a page by title and space key",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "method": "GET",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content",
+      "name": "Create new page",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "method": "POST",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"type\": \"page\",\n  \"title\": \"new page\",\n  \"space\": {\n    \"key\": \"COD\"\n  },\n  \"body\": {\n    \"storage\": {\n      \"value\": \"<p>This is <br/> a new page</p>\",\n      \"representation\": \"storage\"\n    }\n  }\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://localhost:8090/rest/api/content/163938",
+      "name": "Delete page by id",
+      "params": [],
+      "headers": [],
+      "method": "DELETE",
+      "auth": {
+        "authType": "basic",
+        "authActive": true,
+        "username": "admin",
+        "password": "@Qi85yhn"
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "headers": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "_ref_id": "coll_ma3lsap1_72fc72d8-b19e-4751-9180-8373cbee1ee2"
+}
