@@ -12,6 +12,7 @@ This MCP server provides the following operations for Confluence:
 - Find pages by space key
 - Find page by title and space key
 - Create new pages (with optional parent page)
+- Update existing pages
 - Delete pages
 
 ## Installation
@@ -42,7 +43,7 @@ Adjust the values to match your Confluence instance.
 The proper way to run an MCP server is using the MCP CLI tool with the development mode. This will start the MCP Inspector UI which allows you to test and debug the server:
 
 ```bash
-mcp dev server.py
+mcp dev confluence.py
 ```
 
 This will start the MCP Inspector at http://127.0.0.1:6274 by default.
@@ -52,7 +53,7 @@ This will start the MCP Inspector at http://127.0.0.1:6274 by default.
 MCP servers are designed to be run with the MCP CLI tool or integrated with Claude Desktop. Direct execution with Python is not the standard way to run an MCP server, but the script includes a fallback mode for testing:
 
 ```bash
-python server.py
+python confluence.py
 ```
 
 However, this mode has limited functionality and is only intended for basic testing.
@@ -62,7 +63,7 @@ However, this mode has limited functionality and is only intended for basic test
 To install the server in Claude Desktop:
 
 ```bash
-mcp install server.py
+mcp install confluence.py
 ```
 
 ## API Reference
@@ -140,6 +141,8 @@ Once the server is running and connected to an AI model, you can interact with C
 - "Find all pages in the DOCS space"
 - "Get the content of page with ID 123456"
 - "Create a new page titled 'Meeting Notes' in the TEAM space with content '<p>Notes from our meeting</p>'"
+- "Update page with ID 123456 to have the content '<p>Updated meeting notes</p>'"
+- "Update the title of page 123456 to 'Revised Meeting Notes'"
 
 ## License
 
