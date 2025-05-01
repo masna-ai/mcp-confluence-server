@@ -116,6 +116,16 @@ Create a new page in Confluence.
 - `content`: Page content in storage format (HTML)
 - `parentId`: Optional parent page ID
 
+### update_page
+
+Update an existing page in Confluence.
+
+**Parameters:**
+- `pageId`: Confluence Page ID
+- `content`: New page content in storage format (HTML)
+- `title`: Optional new title for the page
+- `spaceKey`: Optional space key (only needed if changing space)
+
 ### delete_page
 
 Delete a page by ID.

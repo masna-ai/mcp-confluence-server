@@ -76,6 +76,53 @@ async def handle_response(response: httpx.Response) -> Dict[str, Any]:
 
 # MCP Tools for Confluence API
 @mcp.tool()
+async def update_page(ctx: Context, pageId: str, content: str, title: str = None, spaceKey: str = None) -> Dict[str, Any]:
+    """
+    Update an existing page in Confluence.
+    
+    Args:
+        pageId: Confluence Page ID
+        content: New page content in storage format (HTML)
+        title: Optional new title for the page
+        spaceKey: Optional space key (only needed if changing space)
+        
+    Returns:
+        Updated page details
+    """
+    client = ctx.request_context.lifespan_context.client
+    
+    # First, get the current page to obtain version number and other details
+    logger.info(f"Getting current page details for page ID: {pageId}")
+    response = await client.get(f"/content/{pageId}")
+    current_page = await handle_response(response)
+    
+    # Prepare update data
+    update_data = {
+        "id": pageId,
+        "type": "page",
+        "title": title or current_page.get("title", ""),
+        "body": {
+            "storage": {
+                "value": content,
+                "representation": "storage"
+            }
+        },
+        "version": {
+            "number": current_page.get("version", {}).get("number", 0) + 1
+        }
+    }
+    
+    # Add space if specified
+    if spaceKey:
+        update_data["space"] = {"key": spaceKey}
+    elif "space" in current_page and "key" in current_page["space"]:
+        update_data["space"] = {"key": current_page["space"]["key"]}
+    
+    logger.info(f"Updating page with ID: {pageId}")
+    response = await client.put(f"/content/{pageId}", json=update_data)
+    return await handle_response(response)
+
+@mcp.tool()
 async def execute_cql_search(ctx: Context, cql: str, limit: int = 10) -> Dict[str, Any]:
     """
     Execute a CQL query on Confluence to search pages.
