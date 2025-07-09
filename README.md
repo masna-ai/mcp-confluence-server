@@ -1,5 +1,7 @@
 # Confluence MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@tqiqbal/mcp-confluence-server)](https://smithery.ai/server/@tqiqbal/mcp-confluence-server)
+
 A Model Context Protocol (MCP) server for interacting with Confluence Data Center via REST API. This server provides a set of tools that allow AI models to interact with Confluence content.
 
 ## Features
