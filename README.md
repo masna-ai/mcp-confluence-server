@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server for interacting with Confluence Data Center via REST API. This server provides a set of tools that allow AI models to interact with Confluence content.
 
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/tqiqbal-mcp-confluence-server).
+
 ## Features
 
 This MCP server provides the following operations for Confluence:
